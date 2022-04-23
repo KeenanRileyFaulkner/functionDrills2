@@ -123,6 +123,5 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
 */
 
 // CODE HERE
-let bobsTotal = 0;
-const bobsPurchases = purchases.filter(purchase => purchase.owner === "Bob").forEach(purchase => bobsTotal += purchase.price);
+const bobsTotal = purchases.filter(purchase => purchase.owner === "Bob").reduce((acc, currPurchase) => acc + currPurchase.price, 0);
 console.log(bobsTotal);
